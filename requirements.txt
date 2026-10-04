@@ -1,0 +1,4 @@
+resilient>=40.0
+resilient-circuits>=40.0
+resilient-lib>=40.0
+requests>=2.28

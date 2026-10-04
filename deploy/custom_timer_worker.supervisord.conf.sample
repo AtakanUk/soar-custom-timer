@@ -1,0 +1,9 @@
+[program:soar_custom_timer_worker]
+command=python -m soar_custom_timer.worker
+directory=%(here)s/..
+autostart=true
+autorestart=true
+startretries=3
+stdout_logfile=%(here)s/../logs/timer_worker.out.log
+stderr_logfile=%(here)s/../logs/timer_worker.err.log
+environment=PYTHONUNBUFFERED="1"

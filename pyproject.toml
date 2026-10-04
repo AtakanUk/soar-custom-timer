@@ -1,0 +1,15 @@
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+filterwarnings = ["ignore::DeprecationWarning", "ignore:pkg_resources is deprecated:UserWarning"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+# BLE (blind except) is left out on purpose: the integrations catch broad exceptions at
+# API boundaries so that one failing record is logged and reported instead of stopping a batch.
+select = ["E", "W", "F", "I", "B", "UP", "N", "PERF", "SIM", "RUF"]
+# Line length is left to the formatter; long HTML/SQL templates and messages stay on one line.
+ignore = ["E501"]
